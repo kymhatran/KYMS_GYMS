@@ -1,3 +1,4 @@
+
 class BookingsController < ApplicationController
   before_action :set_articles, only: [:show, :edit, :update, :destroy]
 
