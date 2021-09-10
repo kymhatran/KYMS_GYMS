@@ -1,9 +1,9 @@
 module ImageHelper
   def photo_for(user)
     if user.photo.attached?
-      cl_image_tag(user.photo.key, class: "user-image", alt: user.first_name, width: 100, height: 100)
+      cl_image_tag(user.photo.key, class: "card__image", alt: user.first_name)
     else
-      image_tag("default.png", class: "user-image", alt: user.first_name, width: 100, height: 100)
+      image_tag("default.png", class: "card__image", alt: user.first_name)
     end
   end
 

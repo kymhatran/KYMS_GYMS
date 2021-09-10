@@ -21,7 +21,8 @@ num = 1
     password: "password",
     first_name:Faker::FunnyName.name,
     last_name:Faker::FunnyName.name,
-    about_me:Faker::Lorem.sentence
+    about_me:Faker::Lorem.sentence,
+    # location:Faker::Address.full_address
     )
     user.photo.attach(io: file, filename: "photo#{num}", content_type: 'image/png')
   trainer = Trainer.create!(

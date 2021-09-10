@@ -5,6 +5,12 @@ class TrainersController < ApplicationController
       @trainers = @trainers.search_by_discipline_and_level(params[:query])
     else
       @trainers = @trainers.all
+        @markers = @trainers.geocoded.map do |trainer|
+      {
+        lat: trainer.latitude,
+        lng: trainer.longitude
+      }
+      end
     end
     # # @trainers = Trainer.all
   end
@@ -24,7 +30,6 @@ class TrainersController < ApplicationController
     else
       render :new
     end
-
   end
 
   def show
@@ -42,6 +47,6 @@ class TrainersController < ApplicationController
   private
 
   def trainer_params
-    params.require(:trainer).permit(:level, :discipline, :price, :about_me)
+    params.require(:trainer).permit(:level, :discipline, :price, :about_me, :location)
   end
 end

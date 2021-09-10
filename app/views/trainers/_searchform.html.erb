@@ -1,6 +1,6 @@
-<div class="container mb-4 py-3">
-  <div class="d-flex w-100 justify-content-center">
-    <div class="w-50 form-inputs ">
+<!-- <div class="container mb-4 py-3"> -->
+  <!-- <div class="d-flex w-100 justify-content-center"> -->
+    <div class="w-50 form-inputs mx-auto ">
       <%= form_tag trainers_path, method: :get, id:"search-form" do %>
         <%= text_field_tag :query,
           params[:query],
@@ -9,8 +9,8 @@
           %>
       <%end %>
       </div>
-    <div class= "ml-2" >
-      <%= submit_tag "Search", class: "xtrabtn", form: "search-form" %>
+    <div class="d-flex justify-content-center">
+      <%= submit_tag "Search", class: "btn", form: "search-form" %>
     </div>
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->

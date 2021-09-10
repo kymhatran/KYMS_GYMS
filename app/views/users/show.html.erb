@@ -11,14 +11,15 @@
           <% end %>
           </div>
           <div class="media-body mb-5 text-white">
-            <h4 class="mt-0 mb-0"><%= @user.first_name %></h4>
-            <p class="small mb-4"> <i class="fas fa-envelope"></i> <%= @user.email %></p>
+            <p class="mt-0 mb-0 text-white"><%= @user.first_name %></p>
+            <p class="small mb-4 text-white"> <i class="fas fa-envelope"></i> <%= @user.email %></p>
+            <p class="small mb-4 text-white"> <%= @user.location %></p>
           </div>
         </div>
       </div>
       <div class="bg-light p-4 d-flex justify-content-between align-items-center text-center">
           <%= link_to trainers_path, class: 'card-remove-link' do %>
-            <i class="btn btn-outline-dark btn-sm">Add new booking</i>
+            <i class="btn btn-sm">Add new booking</i>
         <% end %>
         <ul class="list-inline mb-0">
           <li class="list-inline-item">

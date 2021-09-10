@@ -1,45 +1,82 @@
-<div class= "box">
-  <h1 class= "text-center">Say Hi To Your Trainers!</h1>
-    <%= render "searchform" %>
-    <div class="container mx-auto">
-      <% @trainers.each do |trainer| %>
-      <% if trainer.user != current_user %>
-        <div class="card shadow-sm">
-          <div class="card-body">
-
-              <h2 class="card-title">
-                <%= link_to trainer.user.first_name, user_path(trainer.user) %>
-                <%= photo_for(trainer.user) %>
-              </h2>
-
-            <div class="card-info">
-
-              <p class="card-text">
-                <strong>About Me:</strong>
-                <%= trainer.about_me %>
-              </p>
-
-              <p class="card-text">
-                <strong>Level:</strong>
-                <%= trainer.level %>
-              </p>
-
-              <p class="card-text">
-                <strong>Discipline:</strong>
-                <%= trainer.discipline %>
-              </p>
-
-              <h3 class="card-text">
-                $<%= trainer.price %>
-              </h3>
-
-              <%= link_to "Book me", new_trainer_booking_path(trainer),
-                  class: "btn btn-dark ml-auto p1 btn-xs" %>
-            </div>
+<!-- <div class= "box">
+<h1 class= "text-center">Say Hi To Your Trainers!</h1>
+  <$%= render "searchform" %>
+    <div class=" container">
+        <$% @trainers.each do |trainer| %>
+        <$% if trainer.user != current_user %>
+        <div class= "card border border-primary">
+          <div class="card__text">
+            <$%= photo_for(trainer.user)%>
+           <h2><$%= link_to trainer.user.first_name, user_path(trainer.user) %></h2>
+              <strong>About Me:</strong>
+                <p><$%= trainer.about_me %></p>
+                <ul class="card__info">
+                <li>
+                  <span class="card__info__stats">Level</span>
+                  <span><$%= trainer.level %></span>
+                </li>
+                <li>
+                  <span class="card__info__stats">Discipline</span>
+                  <span><$%= trainer.discipline %></span>
+                </li>
+                <li>
+                  <span class="card__info__stats">Price</span>
+                  <span>$<$%= trainer.price %></span>
+                </li>
+                <li>
+                  <span class="card__info__stats">Location</span>
+                  <span><$%= trainer.user.location %></span>
+                </li>
+              </ul>
+            <$%= link_to "Book me", new_trainer_booking_path(trainer),class: "card__action__button card__action--follow" %>
         </div>
       </div>
-      <% end %>
+      <$% end %>
+    <$% end %>
+</div>
+</div> -->
+
+
+<h1 class= "text-center">Say Hi To Your Trainers!</h1>
+<%= render "searchform"%>
+<div class="cards">
+  <div class= "profile-card">
+    <% @trainers.each do |trainer| %>
+      <% if trainer.user != current_user %>
+      <div class="profile-image">
+        <%= photo_for(trainer.user)%>
+      </div>
+      <div class="profile-card-footer">
+        <div>
+          <h2><%= link_to trainer.user.first_name, user_path(trainer.user), class:"text-success" %></h2>
+          <strong>About Me:</strong>
+            <p><%= trainer.about_me %><br>
+              <%= trainer.user.location %>
+              <%= trainer.user.latitude %>
+              <%= trainer.user.longitude %>
+            </p>
+            <strong> Training styles: </strong>
+            <ul class="card__info">
+              <li>
+                <span><%= trainer.level %></span>
+              </li>
+              <li>
+                <span><%= trainer.discipline %></span>
+              </li>
+            </ul>
+          </div>
+            <div class="profile-card-price">
+              <p> $<%= trainer.price %>/session</p>
+              <%= link_to "Book me", new_trainer_booking_path(trainer),class: "card__action__button card__action--follow" %>
+            </div>
+         </div>
     <% end %>
+  <% end %>
   </div>
 </div>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers= " <%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 

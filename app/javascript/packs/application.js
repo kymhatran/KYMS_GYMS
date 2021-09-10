@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 
 import {initflatpickr} from "./init_flatpickr.js"
+import { initMapbox } from './init_mapbox';
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initflatpickr();
+  initMapbox();
 });
