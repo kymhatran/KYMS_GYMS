@@ -8,6 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'flatpickr/dist/flatpickr';
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 // Your CSS partials
 @import "components/index";
@@ -21,7 +22,7 @@
 
 body {
     background: #white;
-    background: linear-gradient(to right, $white, $light-gray);
+    background: linear-gradient(to 180deg, $white, --main-accent-color );
     min-height: 100vh;
     overflow-x: hidden
 }

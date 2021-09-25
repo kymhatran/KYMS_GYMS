@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+
+body {
+    background: #white;
+    // background: linear-gradient(180deg, white,rgb(94, 33, 92));
+    min-height: 100vh;
+    overflow-x: hidden
+}
+
+
 h1 {
   color: white;
   text-align: center;

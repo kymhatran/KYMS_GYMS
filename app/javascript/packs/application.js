@@ -5,6 +5,7 @@
 
 import {initflatpickr} from "./init_flatpickr.js"
 import { initMapbox } from './init_mapbox';
+import { initAutocomplete } from './init_autocomplete';
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initflatpickr();
   initMapbox();
+  initAutocomplete();
 });

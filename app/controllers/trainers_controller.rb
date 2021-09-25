@@ -8,7 +8,8 @@ class TrainersController < ApplicationController
         @markers = @trainers.geocoded.map do |trainer|
       {
         lat: trainer.latitude,
-        lng: trainer.longitude
+        lng: trainer.longitude,
+        info_window: render_to_string(partial: "/trainers/mapbox", locals: { trainer: trainer })
       }
       end
     end
