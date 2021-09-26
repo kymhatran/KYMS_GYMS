@@ -9,10 +9,11 @@
 
 #map {
   height: 100%;
-  width: 50%;
+  max-width: 900px;
   position: sticky;
   top: 0;
   display: inline;
+  margin-left: 20px;
 }
 
 // .mapboxgl-canvas {
