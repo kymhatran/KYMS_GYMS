@@ -30,15 +30,17 @@
 .profile-card {
   background-color:white;
   max-width: 300px;
+  max-height: 300px;
   margin: 0 auto;
   // height: 50%;
   border-radius: 5px;
   box-shadow: 2px 2px #888888;
   border: solid 2px #9b45e4;
+  position: relative;
   // display:flex;
   // align-items: center;
   // justify-content: space-around;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   // grid-gap: 16px;
   // margin: 0 auto;
   // border: solid;
@@ -63,15 +65,18 @@
   border-radius: 50%;
   // object-fit: fill;
   background-size: cover;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  object-fit: fill;
    // image-rendering: -webkit-optimize-contrast;
   // display: flex;
+  // background-size: cover;
  }
 
- .profile-image {
-  display: flex;
-  margin-bottom: 20px;
-  background-size: cover;
-}
+//  .profile-image {
+//   position: absolute;
+// }
 
 
 .card__action__button {
